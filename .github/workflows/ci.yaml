@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.TOKEN_GIT }}
 
       - name: change tag
-        run: sed -i "s/samet-task:.*/samet-task:${GITHUB_SHA::7}/g" ./manifests/deployment.yaml
+        run: sed -i "s/azure-task:.*/azure-task:${GITHUB_SHA::7}/g" ./manifests/deployment.yaml
 
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
