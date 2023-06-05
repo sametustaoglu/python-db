@@ -5,7 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # PostgreSQL veritabanı bağlantısı için yapılandırma
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@host:port/database_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://adminuser:Passwd123@dbserver.postgres.database.azure.com:5432/mydb'
+# postgres://adminuser:{your_password}@dbserver.postgres.database.azure.com/postgres?sslmode=require
 db = SQLAlchemy(app)
 
 class User(db.Model):
