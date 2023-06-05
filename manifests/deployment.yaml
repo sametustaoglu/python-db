@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: task
-        image: sametustaoglu/azure-task:b642367
+        image: sametustaoglu/azure-task:f04761b
         ports:
         - containerPort: 8080
