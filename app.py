@@ -34,6 +34,13 @@ def get_users():
         result.append(user.name)
     return ', '.join(result)
 
+@app.route('/add_user/<name>')
+def add_user(name):
+    new_user = User(name)
+    db.session.add(new_user)
+    db.session.commit()
+    return 'User added successfully: {}'.format(name)
+
 if __name__ == '__main__':
     # Veritabanını başlatma
     init_db()
