@@ -16,6 +16,12 @@ class User(db.Model):
     def __init__(self, name):
         self.name = name
 
+# Veritabanını başlatan fonksiyon
+def init_db():
+    with app.app_context():
+        db.create_all()
+        print("Veritabanı başarıyla oluşturuldu.")
+
 @app.route('/')
 def hello():
     return 'Hello, World!'
@@ -29,5 +35,8 @@ def get_users():
     return ', '.join(result)
 
 if __name__ == '__main__':
-    app.run()
+    # Veritabanını başlatma
+    init_db()
 
+    # Flask uygulamasını çalıştırma
+    app.run()
